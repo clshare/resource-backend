@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  debian-ssh:
+    image: debian-ssh
+    deploy:
+      resources:
+        limits:
+          cpus: "${CPUS}"
+          memory: "${MEMORY}M"
+    ports:
+      - "${PORT}:22"
+    storage_opt:
+      size: "${STORAGE}M"
